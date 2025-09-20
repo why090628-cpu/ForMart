@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="utf-8" /&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
+<p class="p1">&lt;title&gt;ForMart — Style to Share, Trust to Trade&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">/* ====== THEME / TOKENS ====== */</p>
+<p class="p1">:root{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--navy-900:#0b1d39; --navy-800:#11264a;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--beige-050:#faf7f1; --beige-100:#f4efe6; --beige-200:#efe8dd;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--ink:#1c1d20; --muted:#6b7076; --accent:#b08d57;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--ring:0 0 0 2px rgba(176,141,87,.25); --line:#e9e4da; --card:#fff;</p>
+<p class="p1">}</p>
+<p class="p1">*{box-sizing:border-box}</p>
+<p class="p1">html,body{height:100%}</p>
+<p class="p1">body{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin:0; background:var(--beige-100); color:var(--ink);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font:15px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif;</p>
+<p class="p1">}</p>
+<p class="p1">h1,h2,h3,.logo{font-family:ui-serif,Georgia,"Times New Roman",Times,serif;letter-spacing:.2px}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Offline banner */</p>
+<p class="p1">#offline-bar{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:#fffbdd; color:#7a5a00; border-bottom:1px solid #e4d39a;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:8px 14px; text-align:center; font-weight:600;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Nav */</p>
+<p class="p1">.nav{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:12px 20px; background:linear-gradient(180deg,var(--navy-900),var(--navy-800));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:#fff; border-bottom:1px solid rgba(255,255,255,.08)</p>
+<p class="p1">}</p>
+<p class="p1">.logo{font-weight:800; font-size:18px; color:#fff; text-decoration:none; margin-right:16px}</p>
+<p class="p1">.tabs{display:flex; gap:6px}</p>
+<p class="p1">.tab{padding:8px 12px; border-radius:999px; border:1px solid transparent; background:transparent; color:rgba(255,255,255,.7); cursor:pointer}</p>
+<p class="p1">.tab.active,.tab:hover{color:#fff; border-color:rgba(255,255,255,.18)}</p>
+<p class="p1">.icon-btn{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid var(--line); background:#fff; color:var(--navy-900);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:10px; padding:6px 10px; cursor:pointer;</p>
+<p class="p1">}</p>
+<p class="p1">.icon-btn:hover{ border-color:var(--accent); box-shadow:0 4px 12px rgba(176,141,87,.18) }</p>
+<p class="p2"><br></p>
+<p class="p1">/* Layout */</p>
+<p class="p1">.container{max-width:1180px; margin:0 auto; padding:24px 20px}</p>
+<p class="p1">.hero{padding:24px 0 8px}</p>
+<p class="p1">.hero h1{margin:0 0 6px; font-size:26px; line-height:1.25}</p>
+<p class="p2"><br></p>
+<p class="p1">.cat-bar{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 16px}</p>
+<p class="p1">.pill{padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:linear-gradient(180deg,#fff,#faf7f1); cursor:pointer}</p>
+<p class="p1">.pill.active{border-color:var(--accent); box-shadow:0 4px 12px rgba(176,141,87,.18); color:var(--navy-900)}</p>
+<p class="p2"><br></p>
+<p class="p1">.view{display:none}</p>
+<p class="p1">.view.show{display:block}</p>
+<p class="p1">.two-col{display:grid; grid-template-columns:360px 1fr; gap:20px; align-items:start}</p>
+<p class="p1">@media (max-width:960px){.two-col{grid-template-columns:1fr}}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Panels */</p>
+<p class="p1">.panel{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:0 6px 20px rgba(11,29,57,.06)}</p>
+<p class="p1">.bar{display:flex; justify-content:space-between; align-items:center; margin-bottom:10px}</p>
+<p class="p1">.bar-right{display:flex; gap:8px; align-items:center}</p>
+<p class="p1">.bar-right input,.bar-right select{padding:8px 10px; border:1px solid var(--line); border-radius:10px; background:#fff}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Forms */</p>
+<p class="p1">.field{display:flex; flex-direction:column; gap:6px; margin:10px 0}</p>
+<p class="p1">.field input,.field textarea,.field select{padding:10px 12px; border:1px solid var(--line); border-radius:12px; background:#fff; color:var(--ink)}</p>
+<p class="p1">.field input:focus,.field textarea:focus,.field select:focus{outline:none; box-shadow:var(--ring)}</p>
+<p class="p1">.grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px}</p>
+<p class="p1">@media (max-width:640px){.grid2{grid-template-columns:1fr}}</p>
+<p class="p1">.err{color:#9a1a1a}</p>
+<p class="p2"><br></p>
+<p class="p1">/* File uploader */</p>
+<p class="p1">.visually-hidden{position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}</p>
+<p class="p1">.uploader{display:flex; align-items:center; gap:10px; flex-wrap:wrap}</p>
+<p class="p1">.uploader-btn{display:inline-block; padding:8px 12px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; color:var(--navy-900); font-weight:600}</p>
+<p class="p1">.uploader-btn.small{padding:6px 10px}</p>
+<p class="p1">.uploader-btn:hover{border-color:var(--accent); box-shadow:0 4px 12px rgba(176,141,87,.18)}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Composer previews */</p>
+<p class="p1">.preview-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(90px,1fr)); gap:8px; margin:10px 0 6px}</p>
+<p class="p1">.preview-item{position:relative; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--beige-050)}</p>
+<p class="p1">.preview-item img,.preview-item video{width:100%; height:90px; object-fit:cover; display:block}</p>
+<p class="p1">.preview-item button{position:absolute; top:6px; right:6px; border:none; background:rgba(0,0,0,.55); color:#fff; border-radius:8px; padding:4px 6px; cursor:pointer}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Buttons */</p>
+<p class="p1">.primary{width:100%; padding:10px 14px; border:none; border-radius:12px; cursor:pointer; background:linear-gradient(180deg,#fff,#faf7f1); color:var(--navy-900); font-weight:700; border:1px solid var(--line)}</p>
+<p class="p1">.primary:hover{border-color:var(--accent); box-shadow:0 6px 18px rgba(176,141,87,.18)}</p>
+<p class="p1">.cta{padding:6px 10px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer}</p>
+<p class="p1">.cta:hover{border-color:var(--accent)}</p>
+<p class="p1">.btn-ghost{padding:6px 10px; border:1px solid var(--line); background:#fff; border-radius:10px; cursor:pointer}</p>
+<p class="p1">.btn-ghost:hover{border-color:var(--accent)}</p>
+<p class="p1">.btn-ghost.active,.cta.active{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-color:var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>box-shadow:0 4px 12px rgba(176,141,87,.18);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight:700;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Forum */</p>
+<p class="p1">.list{display:grid; gap:14px}</p>
+<p class="p1">.post{background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:0 6px 20px rgba(11,29,57,.06); position:relative}</p>
+<p class="p1">.post.pinned{outline:2px dashed var(--accent); outline-offset:-6px}</p>
+<p class="p1">.post .ph{padding:14px 16px; display:flex; gap:12px; align-items:center; border-bottom:1px solid var(--line); background:var(--beige-050)}</p>
+<p class="p1">.avatar{width:36px; height:36px; border-radius:999px; overflow:hidden; display:grid; place-items:center; background:linear-gradient(180deg,var(--navy-900),var(--navy-800)); color:#fff; font-weight:800; cursor:pointer}</p>
+<p class="p1">.avatar img{width:100%; height:100%; object-fit:cover; display:block}</p>
+<p class="p1">.meta-wrap{display:flex; flex-direction:column}</p>
+<p class="p1">.meta-top{display:flex; gap:8px; align-items:center; flex-wrap:wrap}</p>
+<p class="p1">.meta-top .author{cursor:pointer; color:#0b1d39; font-weight:700}</p>
+<p class="p1">.meta-top .author:hover{text-decoration:underline}</p>
+<p class="p1">.tag{padding:4px 8px; border-radius:999px; border:1px solid var(--line); background:linear-gradient(180deg,#fff,#faf7f1); font-size:12px; color:var(--navy-900)}</p>
+<p class="p1">.time{color:var(--muted); font-size:12px}</p>
+<p class="p1">.post .body{padding:14px 16px}</p>
+<p class="p1">.attach-grid{display:grid; gap:8px; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); margin-top:8px}</p>
+<p class="p1">.attach-grid img,.attach-grid video{width:100%; height:160px; object-fit:cover; border-radius:10px; border:1px solid var(--line); background:#000; cursor:zoom-in}</p>
+<p class="p1">.actions{display:flex; gap:10px; padding:10px 16px; border-top:1px solid var(--line); flex-wrap:wrap}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Marketplace */</p>
+<p class="p1">.cards{display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}</p>
+<p class="p1">.card{background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:0 6px 20px rgba(11,29,57,.06); display:flex; flex-direction:column; position:relative}</p>
+<p class="p1">.card img{width:100%; height:180px; object-fit:cover; display:block; cursor:zoom-in}</p>
+<p class="p1">.card .ci{padding:12px}</p>
+<p class="p1">.price{font-weight:800; color:var(--navy-900)}</p>
+<p class="p1">.badge{display:inline-block; margin-top:6px; padding:4px 8px; border-radius:999px; border:1px solid var(--line); background:linear-gradient(180deg,#fff,#faf7f1); font-size:12px}</p>
+<p class="p1">.card .row{display:flex; justify-content:space-between; align-items:center; margin-top:8px; gap:6px; flex-wrap:wrap}</p>
+<p class="p1">.card .seller{display:flex; gap:8px; align-items:center; margin-top:8px; cursor:pointer}</p>
+<p class="p1">.card .seller .avatar{width:24px; height:24px}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Sold overlay */</p>
+<p class="p1">.card.sold::after{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>content:"SOLD"; position:absolute; top:12px; left:-28px; transform:rotate(-15deg);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(176,141,87,.9); color:#fff; font-weight:800; letter-spacing:1px; padding:6px 28px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.2)</p>
+<p class="p1">}</p>
+<p class="p1">.card.sold img{filter:grayscale(30%) brightness(0.9)}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Account */</p>
+<p class="p1">.account-profile{display:grid; gap:12px}</p>
+<p class="p1">.avatar-wrap{display:grid; gap:8px; justify-items:start}</p>
+<p class="p1">#acc-avatar{width:80px; height:80px; border-radius:999px; object-fit:cover; background:linear-gradient(180deg,var(--navy-900),var(--navy-800)); border:2px solid var(--line)}</p>
+<p class="p1">.stack{display:grid; gap:10px}</p>
+<p class="p1">.row{display:flex; align-items:center; gap:10px}</p>
+<p class="p1">.sep{border:none; border-top:1px solid var(--line); margin:14px 0}</p>
+<p class="p1">.muted{color:var(--muted)}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Lightbox */</p>
+<p class="p1">.lightbox[hidden]{display:none}</p>
+<p class="p1">.lightbox{position:fixed; inset:0; background:rgba(0,0,0,.75); display:grid; place-items:center; z-index:60}</p>
+<p class="p1">.lightbox img{max-width:min(92vw,1100px); max-height:min(90vh,1100px); border-radius:12px; background:#000; border:1px solid rgba(255,255,255,.2)}</p>
+<p class="p1">.lb-close{position:fixed; top:18px; right:18px; font-size:28px; line-height:1; background:#fff; border:1px solid var(--line); border-radius:10px; padding:6px 10px; cursor:pointer}</p>
+<p class="p1">.lb-close:hover{border-color:var(--accent)}</p>
+<p class="p1">.lb-nav{position:fixed; top:50%; transform:translateY(-50%); background:#fff; border:1px solid var(--line); border-radius:10px; padding:8px 12px; cursor:pointer; font-size:22px}</p>
+<p class="p1">#lb-prev{left:18px} #lb-next{right:18px}</p>
+<p class="p1">.lb-caption{position:fixed; bottom:18px; left:50%; transform:translateX(-50%); background:rgba(255,255,255,.9); border:1px solid var(--line); border-radius:10px; padding:6px 10px; color:var(--ink); max-width:90vw; text-align:center; font-size:14px}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Loading dots for image compression */</p>
+<p class="p1">.loading-dots { display:inline-flex; align-items:center; gap:6px; font-weight:600; }</p>
+<p class="p1">.loading-dots .dot { width:6px; height:6px; border-radius:50%; background:var(--accent); animation:pulse 1s infinite ease-in-out; }</p>
+<p class="p1">.loading-dots .dot:nth-child(2){ animation-delay:.15s }</p>
+<p class="p1">.loading-dots .dot:nth-child(3){ animation-delay:.3s }</p>
+<p class="p1">@keyframes pulse{ 0%,80%,100%{ transform:scale(.6); opacity:.5 } 40%{ transform:scale(1); opacity:1 } }</p>
+<p class="p2"><br></p>
+<p class="p1">/* Dark theme */</p>
+<p class="p1">:root[data-theme="dark"]{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--beige-050:#0f1320; --beige-100:#0c101b; --beige-200:#121726;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--ink:#e9edf7; --muted:#97a0b2; --line:#263148; --card:#12192b;</p>
+<p class="p1">}</p>
+<p class="p1">:root[data-theme="dark"] .panel,</p>
+<p class="p1">:root[data-theme="dark"] .card,</p>
+<p class="p1">:root[data-theme="dark"] .post,</p>
+<p class="p1">:root[data-theme="dark"] .preview-item,</p>
+<p class="p1">:root[data-theme="dark"] .bar-right input,</p>
+<p class="p1">:root[data-theme="dark"] .bar-right select,</p>
+<p class="p1">:root[data-theme="dark"] .field input,</p>
+<p class="p1">:root[data-theme="dark"] .field textarea,</p>
+<p class="p1">:root[data-theme="dark"] .field select,</p>
+<p class="p1">:root[data-theme="dark"] .uploader-btn,</p>
+<p class="p1">:root[data-theme="dark"] .cta,</p>
+<p class="p1">:root[data-theme="dark"] .btn-ghost,</p>
+<p class="p1">:root[data-theme="dark"] .icon-btn{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:#0f1729; color:var(--ink); border-color:var(--line);</p>
+<p class="p1">}</p>
+<p class="p1">:root[data-theme="dark"] .pill,</p>
+<p class="p1">:root[data-theme="dark"] .tag,</p>
+<p class="p1">:root[data-theme="dark"] .badge{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:linear-gradient(180deg,#0f1729,#0c101b); color:var(--ink); border-color:var(--line);</p>
+<p class="p1">}</p>
+<p class="p1">:root[data-theme="dark"] .post .ph{ background:#0f1729; border-bottom-color:var(--line) }</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1">&lt;!-- Offline banner --&gt;</p>
+<p class="p1">&lt;div id="offline-bar" role="status" aria-live="polite" hidden&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>You’re offline. Changes will be saved locally.</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;header class="nav" role="banner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="nav-left"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a class="logo" href="#" aria-label="ForMart Home" data-nav="forum"&gt;ForMart&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav class="tabs" aria-label="Primary"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="tab active" data-view="forum"&gt;Forum&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="tab" data-view="market"&gt;Marketplace&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="tab" data-view="explore"&gt;Explore&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="tab" data-view="account"&gt;Account&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="nav-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode"&gt;🌙&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;main class="container" role="main"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;ForMart — Style to Share, Trust to Trade&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Category pills --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="cat-bar" id="cat-bar" role="navigation" aria-label="Categories"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="cat pill active" data-cat="All"&gt;All&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="cat pill" data-cat="Shoes"&gt;Shoes&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="cat pill" data-cat="Clothing"&gt;Clothing&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="cat pill" data-cat="Accessories"&gt;Accessories&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="cat pill" data-cat="Collectibles"&gt;Collectibles&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="cat pill" data-cat="Tech"&gt;Tech&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="cat pill" data-cat="Furniture"&gt;Furniture&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="cat pill" data-cat="Appliances"&gt;Appliances&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="cat pill" data-cat="Other"&gt;Other&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ===== Forum ===== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="view-forum" class="view show" aria-label="ForMart Forum"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="two-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Composer --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;aside class="panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Start a Discussion&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;form id="post-form" novalidate&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Title&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input name="title" maxlength="120" required placeholder="e.g., Best sneakers for school?" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;small class="err" hidden&gt;&lt;/small&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/label&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Category&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;select name="tag"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option&gt;Shoes&lt;/option&gt;&lt;option&gt;Clothing&lt;/option&gt;&lt;option&gt;Accessories&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option&gt;Collectibles&lt;/option&gt;&lt;option&gt;Tech&lt;/option&gt;&lt;option&gt;Furniture&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option&gt;Appliances&lt;/option&gt;&lt;option&gt;Other&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/label&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Content&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;textarea name="body" rows="4" placeholder="Share your thoughts…"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/label&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Attach photos/videos&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="uploader"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="forum-files" type="file" accept="image/*,video/*" multiple class="visually-hidden" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="forum-files" class="uploader-btn" role="button" tabindex="0"&gt;Choose files&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;small id="forum-file-note" class="hint" data-default="Up to 6 files. Images compressed, videos preview only."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Up to 6 files. Images compressed, videos preview only.</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/small&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="forum-preview" class="preview-grid" aria-live="polite"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="primary" type="submit"&gt;Publish&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/aside&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Feed --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section class="panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;header class="bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;strong&gt;Latest Discussions&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="bar-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input id="forum-search" placeholder="Search posts… (try: tag:Shoes user:Tom)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="forum-sort" aria-label="Sort posts"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="latest"&gt;Latest&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="top"&gt;Top&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="pinned"&gt;Pinned&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="forum-feed" class="list"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ===== Marketplace ===== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="view-market" class="view" aria-label="ForMart Marketplace"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="two-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Composer --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;aside class="panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Create a Listing&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;form id="list-form" novalidate&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Title&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input name="title" maxlength="120" required placeholder="e.g., iPad Air (2022), like new" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;small class="err" hidden&gt;&lt;/small&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/label&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="grid2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;Category&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;select name="cat"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option&gt;Shoes&lt;/option&gt;&lt;option&gt;Clothing&lt;/option&gt;&lt;option&gt;Accessories&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option&gt;Collectibles&lt;/option&gt;&lt;option&gt;Tech&lt;/option&gt;&lt;option&gt;Furniture&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option&gt;Appliances&lt;/option&gt;&lt;option&gt;Other&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;Price (USD)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input name="price" type="number" min="0" step="1" required placeholder="e.g., 120" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;small class="err" hidden&gt;&lt;/small&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="grid2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;Condition&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;select name="cond"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option&gt;New&lt;/option&gt;&lt;option&gt;Like New&lt;/option&gt;&lt;option&gt;Good&lt;/option&gt;&lt;option&gt;Fair&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;Status&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;select name="status"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option&gt;Available&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option&gt;Sold&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Description&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;textarea name="body" rows="4" placeholder="Key details, size, model, defects…"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/label&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Photos&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="uploader"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="list-files" type="file" accept="image/*" multiple class="visually-hidden" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="list-files" class="uploader-btn" role="button" tabindex="0"&gt;Choose photos&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;small id="list-file-note" class="hint" data-default="Up to 8 images."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Up to 8 images.</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/small&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="list-preview" class="preview-grid" aria-live="polite"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Contact (email or @handle)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input name="contact" maxlength="80" placeholder="you@example.com" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/label&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="primary" type="submit"&gt;Post Listing&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/aside&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Listings feed --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section class="panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;header class="bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;strong&gt;New Listings&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="bar-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input id="list-search" placeholder="Search listings… (try: tag:Shoes status:sold)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="list-sort"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="latest"&gt;Latest&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="priceAsc"&gt;Price ↑&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="priceDesc"&gt;Price ↓&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="available"&gt;Available first&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="market-feed" class="cards"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ===== Explore ===== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="view-explore" class="view" aria-label="Explore Announcements"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="two-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section class="panel" style="grid-column: 1 / -1;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;header class="bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;strong&gt;Announcements&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="explore-board"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="muted"&gt;No announcements yet.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ===== Account (with sections) ===== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="view-account" class="view" aria-label="My Account"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="two-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Profile --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;aside class="panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 id="acct-title"&gt;My Account&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="account-profile"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="avatar-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;img id="acc-avatar" alt="Avatar" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input id="acc-avatar-input" type="file" accept="image/*" class="visually-hidden" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="acc-avatar-input" class="uploader-btn small"&gt;Change avatar&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;form id="acc-profile-form" class="stack" novalidate&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;Display name&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input name="name" maxlength="40" placeholder="Your name" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;Bio&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;textarea name="bio" rows="3" placeholder="A line about you…"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="primary" type="submit"&gt;Save profile&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/form&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;hr class="sep" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row" id="account-badges"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="badge"&gt;Listings&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="badge"&gt;Posts&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="badge"&gt;Likes&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="badge"&gt;Favorites&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/aside&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Activity --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section class="panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;header class="bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;strong id="acct-username"&gt;My Activity&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="bar-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="acc-tab" aria-label="My activity filter"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="uploads"&gt;Uploads&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="posts"&gt;My posts&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="listings"&gt;My listings&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="liked"&gt;Liked&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="favorites"&gt;Favorites&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="profile"&gt;Profile&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="acc-content"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p1">&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;footer class="footer" role="contentinfo" style="display:flex;justify-content:space-between;gap:12px;align-items:center;max-width:1180px;margin:20px auto 30px;padding:0 20px;border-top:1px solid var(--line);padding-top:12px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div&gt;© 2025 ForMart — Style • Quality • Community&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;nav class="links" aria-label="Footer" style="display:flex;gap:12px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#"&gt;About&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#"&gt;Community Rules&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#"&gt;Support&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/nav&gt;</p>
+<p class="p1">&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- Lightbox --&gt;</p>
+<p class="p1">&lt;div id="lightbox" class="lightbox" aria-modal="true" role="dialog" hidden&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button id="lb-close" class="lb-close" aria-label="Close"&gt;×&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button id="lb-prev" class="lb-nav" aria-label="Previous"&gt;‹&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;img id="lb-img" alt="Preview" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button id="lb-next" class="lb-nav" aria-label="Next"&gt;›&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="lb-caption" class="lb-caption"&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+</body>
+</html>
